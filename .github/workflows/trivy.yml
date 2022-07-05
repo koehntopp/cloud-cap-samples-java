@@ -37,6 +37,13 @@ jobs:
           image-ref: '.'
           github-pat: ${{ secrets.pat }}
 
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'dependency-results.sbom.json'
+          path: 'dependency-results.sbom.json'
+
       - - name: Run Trivy vulnerability scanner in repo mode
         uses: aquasecurity/trivy-action@master
         with:
