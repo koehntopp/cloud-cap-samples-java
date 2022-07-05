@@ -35,7 +35,7 @@ jobs:
           format: 'github'
           output: 'dependency-results.sbom.json'
           image-ref: '.'
-          github-pat: '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'
+          github-pat: ${{ secrets.pat }}
 
       - - name: Run Trivy vulnerability scanner in repo mode
         uses: aquasecurity/trivy-action@master
